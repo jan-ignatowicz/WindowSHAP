@@ -1,0 +1,21 @@
+Status at the end of January 2024:
+1. utils.py file was refactored only with static code refactor.
+2. Original WindowShap classes were refactored and saved in window_shap.py file
+3. In window_shap.py at the bottom of file we added class RupturesDynamicWindowSHAP
+  (created based on class DynamicWindowSHAP) that allows using ruptures library in aim to find
+  dynamic windows. See RupturesDynamicWindowSHAP class definition to know how to choose different
+  rupture library options.
+4. There are 4 notebooks in repo, but the final results are presented in file
+  synthetic_example_rupture.ipynb. This file should be taken as the starting point for future work.
+  the others notebooks may be also helpful, but they are left as steps in progress during work.
+5. In executing notebooks we encountered a problem with original data generation.
+  The DynamicWindowShap (and created on that RupturesDynamicWindowSHAP) aren't working properly
+  always on the original (taken from vsubbian repo) synthetic data generator. In final notebook this
+  problem is addressed by changing (seeding) data generation.
+6. For Ruptures options there were tested and presented rather default options for each rupture
+  class, which are: Dynp, Pelt, KernelCPD, Binseg, BottomUp, Window.
+
+Tasks for furhter work:
+1. Test different and find best values for options for each of rupture classes.
+2. Fix firstly DynamicWindowSHAP and then RupturesDynamicWindowSHAP for being able to accept all
+  generated synthetic data; not only those seeded ones.
